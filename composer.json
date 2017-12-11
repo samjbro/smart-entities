@@ -10,11 +10,11 @@
   "minimum-stability": "dev",
   "require": {},
   "autoload": {
+    "classmap": [
+      "database/seeds",
+      "database/factories"
+    ],
     "psr-4": {
-      "classmap": [
-        "database/seeds",
-        "database/factories"
-      ],
       "SamJBro\\SmartEntities\\": "packages/samjbro/smart-entities/src"
     }
   }
