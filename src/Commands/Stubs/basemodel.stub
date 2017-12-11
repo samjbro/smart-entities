@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models\Base\MySQL;
+
+use Illuminate\Database\Eloquent\Model;
+
+abstract class BaseModel extends Model
+{
+    protected $entity;
+
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
+    public function getTableName()
+    {
+        return $this->table;
+    }
+}

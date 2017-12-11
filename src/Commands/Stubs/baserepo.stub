@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Contracts\BaseRepositoryContract;
+use App\Models\BaseModel;
+use Illuminate\Support\Facades\DB;
+
+abstract class BaseRepository implements BaseRepositoryContract
+{
+    private $model;
+
+    private $eager_loads = [];
+
+    public function __construct(BaseModel $model)
+    {
+        $this->model = $model;
+    }
+
+    public function getRelation($relation, $id)
+    {
+        return $this->model->with([$relation])->find($id)->{$relation};
+    }
+
+    public function create(array $attributes)
+    {
+        return $this->model->create($attributes);
+    }
+
+    public function update($id, $attributes)
+    {
+        $this->getById($id)->update($attributes);
+        return $this->getById($id);
+    }
+
+    public function delete($id)
+    {
+        return $this->getById($id)->delete();
+    }
+
+    public function getById($id, array $eagerLoads = [])
+    {
+        return $this->model->with($eagerLoads)->find($id);
+    }
+
+    public function getFirst(array $eagerLoads)
+    {
+        return $this->model->with($eagerLoads)->first();
+    }
+
+    public function getLast(array $eagerLoads)
+    {
+        return $this->model->with($eagerLoads)->orderBy('id', 'desc')->first();
+    }
+
+    public function attachRelation($model, $relation, $relationId, $pivotData)
+    {
+
+        $model->{$relation}()->attach($relationId, $pivotData);
+    }
+
+    public function getAll(array $eagerLoads)
+    {
+        return $this->model->with($eagerLoads)->get();
+    }
+
+    public function getAllWhere(array $conditions)
+    {
+        $query = $this->model;
+
+        foreach ($conditions as $key => $value) {
+            $query = $query->where($key, $value);
+        }
+
+        return $query->get();
+    }
+
+
+    public function getFirstWhere(array $condition)
+    {
+        return $this->model->where($condition)->first();
+    }
+
+    public function getTableName()
+    {
+        return $this->model->getTableName();
+    }
+}

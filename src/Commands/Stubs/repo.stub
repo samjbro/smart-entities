@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Repositories\DummyClass\MySQL;
+
+
+use App\Contracts\DummyClassRepositoryContract;
+use App\Models\DummyClass\MySQL\DummyClassModel;
+use App\Repositories\BaseRepository;
+
+class DummyClassRepository extends BaseRepository implements DummyClassRepositoryContract
+{
+    public function __construct(DummyClassModel $model)
+    {
+        parent::__construct($model);
+    }
+}

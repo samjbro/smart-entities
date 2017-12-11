@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Contracts\DummyClassRepositoryContract;
+
+class DummyClassEntity extends BaseEntity
+{
+    public function __construct(DummyClassRepositoryContract $repo)
+    {
+        parent::__construct($repo);
+    }
+
+}
