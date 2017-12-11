@@ -13,7 +13,10 @@
     "classmap": [
       "database/seeds",
       "database/factories"
-    ]
+    ],
+    "psr-4": {
+      "SamJBro\\SmartEntities\\": "packages/samjbro/smart-entities/src"
+    }
   },
   "extra": {
     "laravel": {
