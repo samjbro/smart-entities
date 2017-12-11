@@ -13,5 +13,5 @@
     "psr-4": {
       "SamJBro\\SmartEntities\\": "packages/samjbro/smart-entities/src"
     }
-  },
+  }
 }
