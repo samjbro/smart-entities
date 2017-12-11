@@ -1,5 +1,5 @@
 {
-  "name": "sjbro/smart-entities",
+  "name": "samjbro/smart-entities",
   "description": "Scaffolder for the Smart Entity Pattern",
   "authors": [
     {
@@ -11,6 +11,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
+      "App\\": "app/",
       "SamJBro\\SmartEntities\\": "packages/samjbro/smart-entities/src"
     }
   },
