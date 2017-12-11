@@ -2,7 +2,6 @@
 
 namespace SamJBro\SmartEntities;
 
-use Illuminate\Support\ServiceProvider;
 use SamJBro\SmartEntities\Commands\CreateModel;
 use SamJBro\SmartEntities\Commands\CreateProvider;
 use SamJBro\SmartEntities\Commands\CreateRepository;
@@ -10,7 +9,7 @@ use SamJBro\SmartEntities\Commands\CreateRepositoryContract;
 use SamJBro\SmartEntities\Commands\CreateSmartEntity;
 use SamJBro\SmartEntities\Commands\GenerateSmartEntityPattern;
 
-class SmartEntitiesServiceProvider extends ServiceProvider
+class ServiceProvider extends Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap the application services.
