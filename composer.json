@@ -1,16 +1,17 @@
 {
-  "name": "samjbro/smart-entities",
+  "name": "sjbro/smart-entities",
   "description": "Scaffolder for the Smart Entity Pattern",
+  "authors": [
+    {
+      "name": "Sam Broughton",
+      "email": "sjbroughton1@gmail.com"
+    }
+  ],
   "minimum-stability": "dev",
   "require": {},
   "autoload": {
-    "classmap": [
-      "database/seeds",
-      "database/factories"
-    ],
     "psr-4": {
-      "App\\": "app/",
       "SamJBro\\SmartEntities\\": "packages/samjbro/smart-entities/src"
     }
-  }
+  },
 }
