@@ -18,7 +18,6 @@ class CreateModel extends GeneratorCommand
     public function __construct(Filesystem $files)
     {
         parent::__construct($files);
-        $this->type = $this->qualifyClass($this->getNameInput());
 
     }
 
@@ -33,6 +32,7 @@ class CreateModel extends GeneratorCommand
 
     public function handle()
     {
+        $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseModel();
 
         parent::handle( );
