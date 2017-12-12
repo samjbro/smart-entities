@@ -5,7 +5,7 @@ namespace App\Repositories\DummyClass\MySQL;
 
 use App\Contracts\DummyClassRepositoryContract;
 use App\Models\DummyClass\MySQL\DummyClassModel;
-use App\Repositories\BaseRepository;
+use App\Repositories\Base\MySQL\BaseRepository;
 
 class DummyClassRepository extends BaseRepository implements DummyClassRepositoryContract
 {
