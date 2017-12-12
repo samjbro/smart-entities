@@ -4,6 +4,7 @@ namespace SamJBro\SmartEntities\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
+use Illuminate\Filesystem\Filesystem;
 
 class CreateModel extends GeneratorCommand
 {
@@ -14,12 +15,21 @@ class CreateModel extends GeneratorCommand
      */
     protected $signature = 'make:smartmodel {name}';
 
+    public function __construct(Filesystem $files)
+    {
+        parent::construct($files);
+
+        $this->type = $this->qualifyClass($this->getNameInput());
+    }
+
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'Generate an Eloquent Model for the Smart Entity Pattern';
+
+
 
     public function handle()
     {

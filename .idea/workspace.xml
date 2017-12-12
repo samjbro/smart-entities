@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/model.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateModel.php" afterPath="$PROJECT_DIR$/src/Commands/CreateModel.php" />
     </list>
     <ignored path="smart-entities.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,12 +38,14 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="model.stub" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/model.stub">
+          <file leaf-file-name="CreateModel.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-                  <folding />
+                <state relative-caret-position="357">
+                  <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+                  <folding>
+                    <element signature="e#50#90#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -75,9 +75,9 @@
         <option value="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateRepository.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateModel.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateModel.php" />
       </list>
     </option>
   </component>
@@ -263,15 +263,15 @@
       <option name="presentableId" value="Default" />
       <updated>1513011742938</updated>
       <workItem from="1513011744108" duration="12164000" />
-      <workItem from="1513092007487" duration="1772000" />
+      <workItem from="1513092007487" duration="2014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13936000" />
+    <option name="totallyTimeSpent" value="14178000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -425,14 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/entity.stub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -462,6 +454,16 @@
         <state relative-caret-position="238">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+          <folding>
+            <element signature="e#50#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
