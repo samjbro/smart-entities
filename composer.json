@@ -17,7 +17,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "SamJBro\\SmartEntities\\ServiceProvider"
+        "SamJBro\\SmartEntities\\SmartEntitiesServiceProvider"
       ]
     }
   }
