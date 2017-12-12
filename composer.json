@@ -13,12 +13,5 @@
     "psr-4": {
       "SamJBro\\SmartEntities\\": "src"
     }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "SamJBro\\SmartEntities\\SmartEntitiesServiceProvider"
-      ]
-    }
   }
 }
