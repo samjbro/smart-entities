@@ -31,7 +31,7 @@ class CreateSmartEntity extends GeneratorCommand
     public function handle()
     {
         $this->createBaseEntity();
-
+        $this->addEntityException();
         parent::handle( );
     }
     protected function createBaseEntity()
@@ -41,6 +41,16 @@ class CreateSmartEntity extends GeneratorCommand
         $path = $this->laravel['path'] . "/Entities/BaseEntity.php";
         $this->makeDirectory($path);
         $stub = $this->files->get(__DIR__.'/stubs/baseentity.stub');
+        $this->files->put($path, $stub);
+    }
+
+    protected function addEntityException()
+    {
+        if ($this->alreadyExists('App\Exceptions\RestrictedEntityException')) return false;
+
+        $path = $this->laravel['path'] . "/Exceptions/RestrictedEntityException.php";
+        $this->makeDirectory($path);
+        $stub = $this->files->get(__DIR__.'/stubs/restrictedentity.stub');
         $this->files->put($path, $stub);
     }
 
