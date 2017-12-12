@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Services;
+
+use App\Contracts\BaseRepositoryContract;
+use App\Repositories\BaseRepository;
+use Illuminate\Support\ServiceProvider;
+
+class BaseServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind(BaseRepositoryContract::class, BaseRepository::class);
+    }
+}

@@ -23,7 +23,18 @@ class CreateRepositoryContract extends GeneratorCommand
 
     public function handle()
     {
+        $this->createBaseRepositoryContract();
         parent::handle( );
+    }
+
+    protected function createBaseRepositoryContract()
+    {
+        if ($this->alreadyExists('App\Contracts\BaseRepositoryContract')) return false;
+
+        $path = $this->laravel['path'] . "/Contracts/BaseRepositoryContract.php";
+        $this->makeDirectory($path);
+        $stub = $this->files->get(__DIR__.'/stubs/baserepocontract.stub');
+        $this->files->put($path, $stub);
     }
 
     protected function getPath($name)

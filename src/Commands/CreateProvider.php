@@ -21,10 +21,27 @@ class CreateProvider extends GeneratorCommand
      */
     protected $description = 'Generate a Service Provider for the Smart Entity Pattern';
 
+    public function handle()
+    {
+        $this->createBaseProvider();
+
+        parent::handle( );
+    }
+
     protected function getPath($name)
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
         return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'ServiceProvider.php';
+    }
+
+    protected function createBaseProvider()
+    {
+        if ($this->alreadyExists('App\Providers\BaseServiceProvider')) return false;
+
+        $path = $this->laravel['path'] . "/Providers/BaseServiceProvider.php";
+        $this->makeDirectory($path);
+        $stub = $this->files->get(__DIR__.'/stubs/baseprovider.stub');
+        $this->files->put($path, $stub);
     }
 
     protected function getStub()
