@@ -30,7 +30,7 @@ class CreateRepository extends GeneratorCommand
 
     protected function createBaseRepository()
     {
-        if ($this->alreadyExists('App\Entities\BaseRepository')) return false;
+        if ($this->alreadyExists('App\Entities\Base')) return false;
 
         $path = $this->laravel['path'] . "/Repositories/Base/MySQL/BaseRepository.php";
         $this->makeDirectory($path);

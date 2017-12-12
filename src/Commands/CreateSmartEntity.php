@@ -36,7 +36,7 @@ class CreateSmartEntity extends GeneratorCommand
     }
     protected function createBaseEntity()
     {
-        if ($this->alreadyExists('App\Entities\BaseEntity')) return false;
+        if ($this->alreadyExists('App\Entities\Base')) return false;
 
         $path = $this->laravel['path'] . "/Entities/BaseEntity.php";
         $this->makeDirectory($path);
@@ -46,6 +46,11 @@ class CreateSmartEntity extends GeneratorCommand
 
     protected function addEntityException()
     {
+        $exceptionName = 'App\Exceptions\RestrictedEntityException';
+        if ($this->files->exists($this->getUnalteredPath($this->qualifyClass($exceptionName)))) {
+            return false;
+        }
+
         if ($this->alreadyExists('App\Exceptions\RestrictedEntityException')) return false;
 
         $path = $this->laravel['path'] . "/Exceptions/RestrictedEntityException.php";
@@ -58,6 +63,11 @@ class CreateSmartEntity extends GeneratorCommand
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
         return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Entity.php';
+    }
+
+    protected function getUnalteredPath($name)
+    {
+        return parent::getPath($name);
     }
 
     protected function getStub()

@@ -36,7 +36,7 @@ class CreateProvider extends GeneratorCommand
 
     protected function createBaseProvider()
     {
-        if ($this->alreadyExists('App\Providers\BaseServiceProvider')) return false;
+        if ($this->alreadyExists('App\Providers\Base')) return false;
 
         $path = $this->laravel['path'] . "/Providers/BaseServiceProvider.php";
         $this->makeDirectory($path);

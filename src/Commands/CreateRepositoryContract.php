@@ -29,7 +29,7 @@ class CreateRepositoryContract extends GeneratorCommand
 
     protected function createBaseRepositoryContract()
     {
-        if ($this->alreadyExists('App\Contracts\BaseRepositoryContract')) return false;
+        if ($this->alreadyExists('App\Contracts\Base')) return false;
 
         $path = $this->laravel['path'] . "/Contracts/BaseRepositoryContract.php";
         $this->makeDirectory($path);

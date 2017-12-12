@@ -30,7 +30,7 @@ class CreateModel extends GeneratorCommand
 
     protected function createBaseModel()
     {
-        if ($this->alreadyExists('App\Models\Base\MySQL\BaseModel')) return false;
+        if ($this->alreadyExists('App\Models\Base\MySQL\Base')) return false;
 
         $path = $this->laravel['path'] . "/Models/Base/MySQL/BaseModel.php";
         $this->makeDirectory($path);
