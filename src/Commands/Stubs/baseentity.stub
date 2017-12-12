@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 use App\Contracts\BaseRepositoryContract;
-use App\Exceptions\RestrictedEntity;
+use App\Exceptions\RestrictedEntityException as RestrictedEntity;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Support\Collection;
 

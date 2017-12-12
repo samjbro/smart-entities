@@ -3,10 +3,13 @@
 namespace DummyNamespace;
 
 use App\Models\Base\MySQL\BaseModel;
+use App\Entities\DummyClassEntity;
 
 class DummyClassModel extends BaseModel
 {
     protected $table = 'dummytablename';
+
+    protected $entity = DummyClassEntity::class;
 
     protected $fillable = [];
 }
