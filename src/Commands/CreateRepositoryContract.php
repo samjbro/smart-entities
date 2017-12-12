@@ -23,6 +23,7 @@ class CreateRepositoryContract extends GeneratorCommand
 
     public function handle()
     {
+        $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseRepositoryContract();
         parent::handle( );
     }

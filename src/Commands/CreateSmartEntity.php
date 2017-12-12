@@ -30,6 +30,7 @@ class CreateSmartEntity extends GeneratorCommand
 
     public function handle()
     {
+        $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseEntity();
         $this->addEntityException();
         parent::handle( );

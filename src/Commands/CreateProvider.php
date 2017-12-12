@@ -23,6 +23,7 @@ class CreateProvider extends GeneratorCommand
 
     public function handle()
     {
+        $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseProvider();
 
         parent::handle( );

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateModel.php" afterPath="$PROJECT_DIR$/src/Commands/CreateModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateProvider.php" afterPath="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateRepository.php" afterPath="$PROJECT_DIR$/src/Commands/CreateRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" afterPath="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" afterPath="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
     </list>
     <ignored path="smart-entities.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,14 +41,12 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CreateModel.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
+          <file leaf-file-name="GenerateSmartEntityPattern.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="578">
-                  <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
-                  <folding>
-                    <element signature="e#50#90#0#PHP" expanded="true" />
-                  </folding>
+                <state relative-caret-position="570">
+                  <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -71,13 +72,13 @@
         <option value="$PROJECT_DIR$/src/Commands/Stubs/repo.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/restrictedentityexception.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateRepository.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
         <option value="$PROJECT_DIR$/src/Commands/CreateModel.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateRepository.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
       </list>
     </option>
   </component>
@@ -263,12 +264,12 @@
       <option name="presentableId" value="Default" />
       <updated>1513011742938</updated>
       <workItem from="1513011744108" duration="12164000" />
-      <workItem from="1513092007487" duration="2757000" />
+      <workItem from="1513092007487" duration="3491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14921000" />
+    <option name="totallyTimeSpent" value="15655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -370,46 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/entity.stub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -460,11 +421,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+        <state relative-caret-position="561">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="34" selection-end-column="65" />
           <folding>
             <element signature="e#50#90#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

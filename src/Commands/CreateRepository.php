@@ -23,6 +23,7 @@ class CreateRepository extends GeneratorCommand
 
     public function handle()
     {
+        $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseRepository();
 
         parent::handle( );
