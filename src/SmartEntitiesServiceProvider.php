@@ -10,7 +10,7 @@ use SamJBro\SmartEntities\Commands\CreateSmartEntity;
 use SamJBro\SmartEntities\Commands\GenerateSmartEntityPattern;
 //use Illuminate\Support\ServiceProvider;
 
-class SmartEntitiesServiceProvider \\extends ServiceProvider
+class SmartEntitiesServiceProvider //extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
