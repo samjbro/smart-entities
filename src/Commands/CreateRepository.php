@@ -32,7 +32,7 @@ class CreateRepository extends GeneratorCommand
     {
         if ($this->alreadyExists('App\Entities\BaseRepository')) return false;
 
-        $path = $this->laravel['path'] . "/Repositories/BaseRepository.php";
+        $path = $this->laravel['path'] . "/Repositories/Base/MySQL/BaseRepository.php";
         $this->makeDirectory($path);
         $stub = $this->files->get(__DIR__.'/stubs/baserepo.stub');
         $this->files->put($path, $stub);

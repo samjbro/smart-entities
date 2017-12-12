@@ -53,7 +53,7 @@ class GenerateSmartEntityPattern extends Command
         ]);
 
         $this->call('make:smartrepo', [
-            'name' => "App\\Repositories\\{$name}"
+            'name' => "App\\Repositories\\{$name}\\MySQL\\{$name}"
         ]);
 
         $this->call('make:smartprovider', [
