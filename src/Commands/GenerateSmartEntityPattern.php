@@ -39,6 +39,7 @@ class GenerateSmartEntityPattern extends Command
     {
         $name = $this->argument('name');
         $this->makeEntity($name);
+        $this->info("Don't forget to add your new service provider to the config/app.php 'providers' array!");
     }
 
     public function makeEntity($name)

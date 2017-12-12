@@ -10,7 +10,7 @@ class DummyClassServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(DummyClassRepositoryContract::class, DummyClassRepository::class);
+        $this->app->bind(DummyClassRepositoryContract::class, DummyClassRepository::class);
     }
 
     public function boot()

@@ -42,6 +42,7 @@ class CreateProvider extends GeneratorCommand
         $this->makeDirectory($path);
         $stub = $this->files->get(__DIR__.'/stubs/baseprovider.stub');
         $this->files->put($path, $stub);
+        $this->info("Make sure to add the BaseServiceProvider to the config/app.php 'providers' array!");
     }
 
     protected function getStub()

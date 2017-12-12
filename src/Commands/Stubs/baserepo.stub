@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Contracts\BaseRepositoryContract;
-use App\Models\BaseModel;
+use App\Models\Base\MySQL\BaseModel;
 use Illuminate\Support\Facades\DB;
 
 abstract class BaseRepository implements BaseRepositoryContract
