@@ -150,25 +150,25 @@ abstract class BaseEntity implements \JsonSerializable
         return $this->attributes->$name;
     }
 
-    public function getById($id, ...$eagerLoads)
+    public function getById($id, $eagerLoads)
     {
         $model = $this->repo->getById($id, $eagerLoads);
         return $this->buildEntity($model);
     }
 
-    public function getFirst(...$eagerLoads)
+    public function getFirst($eagerLoads)
     {
         $model = $this->repo->getFirst($eagerLoads);
         return $this->buildEntity($model);
     }
 
-    public function getLast(...$eagerLoads)
+    public function getLast($eagerLoads)
     {
         $model = $this->repo->getLast($eagerLoads);
         return $this->buildEntity($model);
     }
 
-    public function getAll(...$eagerLoads)
+    public function getAll($eagerLoads)
     {
         $models = $this->repo->getAll($eagerLoads);
         return $this->buildEntities($models);
