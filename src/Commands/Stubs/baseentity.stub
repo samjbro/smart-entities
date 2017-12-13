@@ -94,6 +94,13 @@ abstract class BaseEntity implements \JsonSerializable
         $this->repo->attachRelation($model, $relation, $relationId, $pivotData);
     }
 
+    public function attachRelations($relation, $data)
+    {
+        $model = $this->getModel();
+        $this->repo->attachRelations($model, $relation, $data);
+
+    }
+
     public function getModel()
     {
         return $this->repo->getById($this->getId());

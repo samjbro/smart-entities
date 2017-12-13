@@ -55,8 +55,12 @@ abstract class BaseRepository implements BaseRepositoryContract
 
     public function attachRelation($model, $relation, $relationId, $pivotData)
     {
-
         $model->{$relation}()->attach($relationId, $pivotData);
+    }
+
+    public function attachRelations($model, $relation, $data)
+    {
+        $model->{$relation}()->attach($data);
     }
 
     public function getAll(array $eagerLoads)

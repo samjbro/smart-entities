@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" />
     </list>
     <ignored path="smart-entities.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +25,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.39591077">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/composer.json">
+          <file leaf-file-name="baseentity.stub" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+                <state relative-caret-position="527">
+                  <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -39,14 +39,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="baseentity.stub" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub">
+          <file leaf-file-name="baserepo.stub" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
-                  <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
-                  <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
-                  <caret line="170" column="27" selection-start-line="170" selection-start-column="27" selection-end-line="170" selection-end-column="27" />
+                <state relative-caret-position="680">
+                  <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -72,7 +69,6 @@
         <option value="$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/repo.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/restrictedentityexception.stub" />
-        <option value="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
         <option value="$PROJECT_DIR$/src/Commands/CreateModel.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
@@ -80,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
+        <option value="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" />
       </list>
     </option>
   </component>
@@ -265,12 +262,12 @@
       <option name="presentableId" value="Default" />
       <updated>1513011742938</updated>
       <workItem from="1513011744108" duration="12164000" />
-      <workItem from="1513092007487" duration="4753000" />
+      <workItem from="1513092007487" duration="5586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16917000" />
+    <option name="totallyTimeSpent" value="17750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -397,14 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/CreateModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -431,14 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -455,21 +436,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="680">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
-          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
-          <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
-          <caret line="170" column="27" selection-start-line="170" selection-start-column="27" selection-end-line="170" selection-end-column="27" />
+        <state relative-caret-position="527">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding />
         </state>
       </provider>
