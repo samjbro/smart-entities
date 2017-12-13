@@ -40,7 +40,7 @@ class CreateModel extends GeneratorCommand
 
     protected function createBaseModel()
     {
-        if ($this->alreadyExists('App\Models\Base\MySQL\Base')) return false;
+        if ($this->alreadyExists('App\Models\Base\MySQL\BaseModel')) return false;
 
         $path = $this->laravel['path'] . "/Models/Base/MySQL/BaseModel.php";
         $this->makeDirectory($path);
@@ -48,11 +48,11 @@ class CreateModel extends GeneratorCommand
         $this->files->put($path, $stub);
     }
 
-    protected function getPath($name)
-    {
-        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
-        return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Model.php';
-    }
+//    protected function getPath($name)
+//    {
+//        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
+//        return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Model.php';
+//    }
 
     protected function getStub()
     {

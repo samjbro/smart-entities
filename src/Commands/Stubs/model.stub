@@ -5,7 +5,7 @@ namespace DummyNamespace;
 use App\Models\Base\MySQL\BaseModel;
 use App\Entities\DummyClassEntity;
 
-class DummyClassModel extends BaseModel
+class DummyClass extends BaseModel
 {
     protected $table = 'dummytablename';
 

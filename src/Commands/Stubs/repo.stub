@@ -4,12 +4,12 @@ namespace App\Repositories\DummyClass\MySQL;
 
 
 use App\Contracts\DummyClassRepositoryContract;
-use App\Models\DummyClass\MySQL\DummyClassModel;
+use App\Models\DummyClass\MySQL\DummyClass;
 use App\Repositories\Base\MySQL\BaseRepository;
 
 class DummyClassRepository extends BaseRepository implements DummyClassRepositoryContract
 {
-    public function __construct(DummyClassModel $model)
+    public function __construct(DummyClass $model)
     {
         parent::__construct($model);
     }
