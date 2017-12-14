@@ -6,6 +6,8 @@ use App\Contracts\DummyClassRepositoryContract;
 
 class DummyClassEntity extends BaseEntity
 {
+    protected $gettable = [];
+
     public function __construct(DummyClassRepositoryContract $repo)
     {
         parent::__construct($repo);
