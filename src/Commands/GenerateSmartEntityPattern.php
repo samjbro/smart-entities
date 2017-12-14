@@ -13,7 +13,7 @@ class GenerateSmartEntityPattern extends Command
      *
      * @var string
      */
-    protected $signature = 'make:smart {name} {--m|migration= : Make a migration for the model}';
+    protected $signature = 'make:smart {name} {--m|migration= : Create a migration for the entity}';
 
     /**
      * The console command description.
@@ -73,11 +73,17 @@ class GenerateSmartEntityPattern extends Command
 
     protected function createMigration()
     {
-        $table = Str::plural(Str::snake(class_basename($this->argument('name'))));
+        $name = Str::plural(Str::snake(class_basename($this->argument('name'))));
+
+        if (is_string($this->option('migration'))) {
+            $table = $this->option('migration');
+        } else {
+            $table = "create_{$name}_table";
+        }
 
         $this->call('make:migration', [
-            'name' => "create_{$table}_table",
-            '--create' => $table,
+            'name' => $table,
+            '--create' => $name,
         ]);
     }
 
