@@ -13,7 +13,7 @@ class GenerateSmartEntityPattern extends Command
      *
      * @var string
      */
-    protected $signature = 'make:smart {name}';
+    protected $signature = 'make:smart {name} {--m|migration= : Make a migration for the model}';
 
     /**
      * The console command description.
