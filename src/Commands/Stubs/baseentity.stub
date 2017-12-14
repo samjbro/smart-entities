@@ -46,19 +46,6 @@ abstract class BaseEntity implements \JsonSerializable
             $entityName = get_class($this);
             throw new Exception("Attribute '{$attribute}' is not gettable or does not exist on {$entityName}.");
         }
-        $model = $this->getModel();
-        $modelName = get_class($model);
-        if (in_array($attribute, $model->getGuarded())) {
-            throw new Exception("Attribute '{$attribute}' is set as guarded on {$modelName}.");
-        }
-
-        if (method_exists($model, 'specs') && $model->{$attribute} instanceof \Traversable) {
-            return $this->$attribute;
-        }
-
-        if (!in_array($attribute, $model->getFillable())) {
-            throw new Exception("Attribute '{$attribute}' is not set as fillable or defined as a relationship on {$modelName}.");
-        }
 
         return $this->$attribute;
     }
@@ -70,9 +57,25 @@ abstract class BaseEntity implements \JsonSerializable
 
     public function create(array $attributes = []): BaseEntity
     {
+        $entityName = $this->getType();
+        foreach(array_keys($attributes) as $attribute) {
+            if (!empty($this->getGuarded()) && !in_array($attribute, $this->getFillable())) {
+                throw new Exception("Attribute '{$attribute}' is not set as fillable on {$entityName}'s Model'");
+            }
+        }
+
         if ($this->exists) throw RestrictedEntity::actionNotPermitted();
         $model = $this->repo->create($attributes);
         return $this->buildEntity($model);
+    }
+
+    protected function getFillable()
+    {
+        return $this->repo->getFillable();
+    }
+    protected function getGuarded()
+    {
+        return $this->repo->getGuarded();
     }
 
     public function update($id, array $attributes = [])
@@ -143,7 +146,7 @@ abstract class BaseEntity implements \JsonSerializable
 
         if (is_a($model, Collection::class) && $model->isEmpty()) return null;
 
-        return app()->make($model->getEntity())->buildEntity($model)->get($relation);
+        return $this->buildEntity($model)->get($relation);
     }
 
 
@@ -166,6 +169,8 @@ abstract class BaseEntity implements \JsonSerializable
 
     protected function buildRelation($model)
     {
+        if (!$model) return null;
+//        if (is_a($model, Pivot::class)) dd($model);
         if (is_a($model, Pivot::class)) return $model->getAttributes();
         $relationEntity = app()->make($model->getEntity());
         return $relationEntity->buildEntity($model);

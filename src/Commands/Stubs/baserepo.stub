@@ -10,11 +10,18 @@ abstract class BaseRepository implements BaseRepositoryContract
 {
     private $model;
 
-    private $eager_loads = [];
-
     public function __construct(BaseModel $model)
     {
         $this->model = $model;
+    }
+
+    public function getFillable()
+    {
+        return $this->model->getFillable();
+    }
+
+    public function getGuarded()    {
+        return $this->model->getGuarded();
     }
 
     public function getRelation($relation, $id)
