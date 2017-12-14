@@ -17,4 +17,14 @@ abstract class BaseModel extends Model
     {
         return $this->table;
     }
+
+    public function getFillable()
+    {
+        return $this->fillable;
+    }
+
+    public function getGuarded()
+    {
+        return $this->guarded;
+    }
 }

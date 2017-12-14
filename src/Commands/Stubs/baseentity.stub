@@ -4,6 +4,7 @@ namespace App\Entities;
 
 use App\Contracts\BaseRepositoryContract;
 use App\Exceptions\RestrictedEntityException as RestrictedEntity;
+use Exception;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Support\Collection;
 
@@ -32,9 +33,26 @@ abstract class BaseEntity implements \JsonSerializable
      */
     protected $exists;
 
+    protected $gettable = [];
+
     public function __construct(BaseRepositoryContract $repo)
     {
         $this->repo = $repo;
+    }
+
+    public function get($attribute)
+    {
+        if (!in_array($attribute, $this->gettable)) {
+            throw new Exception("Attribute '{$attribute}' is not gettable or does not exist on this entity.");
+        }
+        if (in_array($attribute, $this->getModel()->getGuarded())) {
+            throw new Exception("Attribute '{$attribute}' is set as guarded on the model.");
+        }
+        if (!in_array($attribute, $this->getModel()->getFillable())) {
+            throw new Exception("Attribute '{$attribute}' is not set as fillable on the model.");
+        }
+
+        return $this->$attribute;
     }
 
     public function create(array $attributes = []): BaseEntity
