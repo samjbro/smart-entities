@@ -43,16 +43,29 @@ abstract class BaseEntity implements \JsonSerializable
     public function get($attribute)
     {
         if (!in_array($attribute, $this->gettable)) {
-            throw new Exception("Attribute '{$attribute}' is not gettable or does not exist on this entity.");
+            $entityName = get_class($this);
+            throw new Exception("Attribute '{$attribute}' is not gettable or does not exist on {$entityName}.");
         }
-        if (in_array($attribute, $this->getModel()->getGuarded())) {
-            throw new Exception("Attribute '{$attribute}' is set as guarded on the model.");
+        $model = $this->getModel();
+        $modelName = get_class($model);
+        if (in_array($attribute, $model->getGuarded())) {
+            throw new Exception("Attribute '{$attribute}' is set as guarded on {$modelName}.");
         }
-        if (!in_array($attribute, $this->getModel()->getFillable())) {
-            throw new Exception("Attribute '{$attribute}' is not set as fillable on the model.");
+
+        if (method_exists($model, 'specs') && $model->{$attribute} instanceof \Traversable) {
+            return $this->$attribute;
+        }
+
+        if (!in_array($attribute, $model->getFillable())) {
+            throw new Exception("Attribute '{$attribute}' is not set as fillable or defined as a relationship on {$modelName}.");
         }
 
         return $this->$attribute;
+    }
+
+    public function getPivot($value)
+    {
+        return $this->pivot[$value];
     }
 
     public function create(array $attributes = []): BaseEntity
@@ -126,11 +139,11 @@ abstract class BaseEntity implements \JsonSerializable
 
     public function getRelation($relation)
     {
-        $model = $this->repo->getRelation($relation, $this->getId());
+        $model = $this->repo->getById($this->getId(), [$relation]);
 
         if (is_a($model, Collection::class) && $model->isEmpty()) return null;
 
-        return app()->make($model->getEntity())->buildEntity($model);
+        return app()->make($model->getEntity())->buildEntity($model)->get($relation);
     }
 
 
