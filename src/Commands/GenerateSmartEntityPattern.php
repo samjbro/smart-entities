@@ -2,7 +2,9 @@
 
 namespace SamJBro\SmartEntities\Commands;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputOption;
 
 class GenerateSmartEntityPattern extends Command
 {
@@ -40,6 +42,10 @@ class GenerateSmartEntityPattern extends Command
         $name = $this->argument('name');
         $this->makeEntity($name);
         $this->info("Don't forget to add your new service provider to the config/app.php 'providers' array!");
+
+        if ($this->option('migration')) {
+            $this->createMigration();
+        }
     }
 
     public function makeEntity($name)
@@ -57,11 +63,28 @@ class GenerateSmartEntityPattern extends Command
         ]);
 
         $this->call('make:smartprovider', [
-           'name' => "App\\Providers\\{$name}"
+            'name' => "App\\Providers\\{$name}"
         ]);
 
         $this->call('make:smartmodel', [
             'name' => "App\\Models\\{$name}\\MySQL\\{$name}"
         ]);
+    }
+
+    protected function createMigration()
+    {
+        $table = Str::plural(Str::snake(class_basename($this->argument('name'))));
+
+        $this->call('make:migration', [
+            'name' => "create_{$table}_table",
+            '--create' => $table,
+        ]);
+    }
+
+    protected function getOptions()
+    {
+        return [
+            ['migration', 'm', InputOption::VALUE_NONE, 'Create a new migration file for the model.'],
+        ];
     }
 }
