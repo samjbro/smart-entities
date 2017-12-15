@@ -44,7 +44,7 @@ abstract class BaseEntity implements \JsonSerializable
     {
         if (!in_array($attribute, $this->gettable)) {
             $entityName = get_class($this);
-            throw new Exception("Attribute '{$attribute}' is not gettable or does not exist on {$entityName}.");
+            throw new Exception("Attribute or relation '{$attribute}' is not gettable or does not exist on {$entityName}.");
         }
 
         return $this->$attribute;
@@ -59,7 +59,7 @@ abstract class BaseEntity implements \JsonSerializable
     {
         $entityName = $this->getType();
         foreach(array_keys($attributes) as $attribute) {
-            if (!empty($this->getGuarded()) && !in_array($attribute, $this->getFillable())) {
+            if (!empty($this->getGuarded()) && (in_array($attribute, $this-getGuarded() || !in_array($attribute, $this->getFillable()))) {
                 throw new Exception("Attribute '{$attribute}' is not set as fillable on {$entityName}'s Model'");
             }
         }
