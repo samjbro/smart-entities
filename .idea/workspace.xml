@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Commands/Stubs/entity.stub" afterPath="$PROJECT_DIR$/src/Commands/Stubs/entity.stub" />
     </list>
     <ignored path="smart-entities.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,15 +23,17 @@
     <favorites_list name="smart-entities" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4182156">
+    <splitter split-orientation="horizontal" split-proportion="0.488228">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CreateRepository.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
+          <file leaf-file-name="GenerateSmartEntityPattern.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="63" />
-                  <folding />
+                <state relative-caret-position="-119">
+                  <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#50#77#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -42,8 +45,8 @@
           <file leaf-file-name="baseentity.stub" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="881">
-                  <caret line="333" column="1" selection-start-line="333" selection-start-column="1" selection-end-line="333" selection-end-column="1" />
+                <state relative-caret-position="4672">
+                  <caret line="310" column="36" selection-start-line="310" selection-start-column="36" selection-end-line="310" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -76,9 +79,9 @@
         <option value="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
         <option value="$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/basemodel.stub" />
-        <option value="$PROJECT_DIR$/src/Commands/Stubs/entity.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
+        <option value="$PROJECT_DIR$/src/Commands/Stubs/entity.stub" />
       </list>
     </option>
   </component>
@@ -264,12 +267,12 @@
       <option name="presentableId" value="Default" />
       <updated>1513011742938</updated>
       <workItem from="1513011744108" duration="12164000" />
-      <workItem from="1513092007487" duration="19847000" />
+      <workItem from="1513092007487" duration="24714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32011000" />
+    <option name="totallyTimeSpent" value="36878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -399,14 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/model.stub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -431,24 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding>
-            <element signature="e#50#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/entity.stub">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -465,10 +442,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/GenerateSmartEntityPattern.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding>
+            <element signature="e#50#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/entity.stub">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="333" column="1" selection-start-line="333" selection-start-column="1" selection-end-line="333" selection-end-column="1" />
+        <state relative-caret-position="4672">
+          <caret line="310" column="36" selection-start-line="310" selection-start-column="36" selection-end-line="310" selection-end-column="36" />
           <folding />
         </state>
       </provider>
