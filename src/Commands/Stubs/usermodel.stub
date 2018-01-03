@@ -1,0 +1,15 @@
+<?php
+
+ namespace App\Models\User\MySQL;
+
+ use App\Models\Base\MySQL\Base;
+ use App\Entities\UserEntity;
+
+ class User extends Base
+ {
+     protected $table = 'users';
+
+     protected $entity = UserEntity::class;
+
+     protected $fillable = ['name', 'email', 'password', 'remember_token'];
+ }

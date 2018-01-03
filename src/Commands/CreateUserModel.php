@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 
-class CreateModel extends GeneratorCommand
+class CreateUserModel extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
