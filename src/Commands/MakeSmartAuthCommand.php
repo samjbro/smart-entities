@@ -47,23 +47,17 @@ class MakeSmartAuthCommand extends Command
 
     public function makeModel()
     {
-        $stub = __DIR__.'/stubs/usermodel.stub';
-        $path = $this->laravel['path'] . '/Models/User/MySQL/User.php';
-        copy($stub, $path);
+        $this->call('make:smartusermodel');
     }
 
     public function makeEntity()
     {
-        $stub = __DIR__.'/stubs/userentity.stub';
-        $path = $this->laravel['path'] . '/Entities/User.php';
-        copy($stub, $path);
+        $this->call('make:smartuserentity');
     }
 
     public function makeProvider()
     {
-        $stub = __DIR__.'/stubs/userprovider.stub';
-        $path = $this->laravel['path'] . '/Extensions/SmartUserProvider.php';
-        copy($stub, $path);
+        $this->call('make:smartauthprovider');
     }
 
     public function makeRepository()

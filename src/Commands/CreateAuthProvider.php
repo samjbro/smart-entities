@@ -5,37 +5,37 @@ namespace SamJBro\SmartEntities\Commands;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 
-class CreateUserModel extends GeneratorCommand
+class CreateAuthProvider extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:smartusermodel';
+    protected $signature = 'make:smartauthprovider';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate a User Model for the Smart Entity Pattern';
+    protected $description = 'Generate an Auth Provider for the Smart Entity Pattern';
 
     public function handle()
     {
-        $this->type = 'User';
+        $this->type = $this->qualifyClass($this->getNameInput());
 
         parent::handle( );
     }
 
-    protected function getPath()
+    protected function getPath($name)
     {
-        return $this->laravel['path'].'/Models/User/MySQL/User.php';
+        return $this->laravel['path'].'/Extensions/SmartUserProvider.php';
     }
 
 
     protected function getStub()
     {
-        return __DIR__.'/stubs/usermodel.stub';
+        return __DIR__.'/stubs/userprovider.stub';
     }
 }

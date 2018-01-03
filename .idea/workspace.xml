@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Commands/Stubs/usermodel.stub" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Commands/CreateAuthProvider.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/smart-entities.iml" afterPath="$PROJECT_DIR$/.idea/smart-entities.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" afterPath="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
       <change beforePath="$PROJECT_DIR$/src/Commands/CreateUserModel.php" afterPath="$PROJECT_DIR$/src/Commands/CreateUserModel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php" afterPath="$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php" />
+      <change beforePath="$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php" afterPath="$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php" />
     </list>
     <ignored path="smart-entities.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,47 +34,26 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.4364802">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="MakeSmartAuthCommand.php" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="159">
-                      <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/README.md">
-                  <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                    <state split_layout="SPLIT">
-                      <first_editor relative-caret-position="120">
-                        <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-                        <folding />
-                      </first_editor>
-                      <second_editor />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="CreateSmartEntity.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="258">
+                  <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="CreateUserModel.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Commands/CreateUserModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+                <state relative-caret-position="450">
+                  <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="32" selection-end-column="68" />
                   <folding />
                 </state>
               </provider>
@@ -101,7 +87,6 @@
         <option value="$PROJECT_DIR$/src/Commands/CreateProvider.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateRepository.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateModel.php" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/repo.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/model.stub" />
@@ -111,10 +96,13 @@
         <option value="$PROJECT_DIR$/src/Commands/Stubs/baseentity.stub" />
         <option value="$PROJECT_DIR$/src/Commands/Stubs/entity.stub" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php" />
         <option value="$PROJECT_DIR$/.idea/smart-entities.iml" />
-        <option value="$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateUserEntity.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateAuthProvider.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateUserModel.php" />
+        <option value="$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php" />
+        <option value="$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
       </list>
     </option>
   </component>
@@ -127,7 +115,13 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+    </include_path>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1280" />
     <option name="y" value="-482" />
@@ -274,17 +268,18 @@
       <workItem from="1513011744108" duration="12164000" />
       <workItem from="1513092007487" duration="24714000" />
       <workItem from="1514906813504" duration="289000" />
-      <workItem from="1514907134553" duration="6606000" />
+      <workItem from="1514907134553" duration="7950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43773000" />
+    <option name="totallyTimeSpent" value="45117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-482" width="1920" height="1053" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -397,13 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepositoryContract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -432,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="65" lean-forward="false" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/Stubs/baserepo.stub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -450,13 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -510,14 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/smart-entities.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -526,18 +492,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateAuthProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/MakeSmartAuthCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="30" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="540">
+          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="e#41#95#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/CreateUserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="450">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="32" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding />
         </state>
       </provider>

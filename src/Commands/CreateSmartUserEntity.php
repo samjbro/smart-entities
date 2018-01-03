@@ -6,14 +6,14 @@ use Illuminate\Console\GeneratorCommand;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-class CreateSmartEntity extends GeneratorCommand
+class CreateSmartUserEntity extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:smartentity {name}';
+    protected $signature = 'make:smartuserentity';
 
     /**
      * The console command description.
@@ -62,7 +62,8 @@ class CreateSmartEntity extends GeneratorCommand
 
     protected function getPath($name)
     {
-        return $this->laravel['path'].'/Entities/UserEntity.php';
+        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
+        return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Entity.php';
     }
 
     protected function getUnalteredPath($name)
