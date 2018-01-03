@@ -9,6 +9,7 @@ use SamJBro\SmartEntities\Commands\CreateRepositoryContract;
 use SamJBro\SmartEntities\Commands\CreateSmartEntity;
 use SamJBro\SmartEntities\Commands\GenerateSmartEntityPattern;
 use Illuminate\Support\ServiceProvider;
+use SamJBro\SmartEntities\Commands\MakeSmartAuthCommand;
 
 class SmartEntitiesServiceProvider extends ServiceProvider
 {
@@ -26,7 +27,8 @@ class SmartEntitiesServiceProvider extends ServiceProvider
                 CreateRepositoryContract::class,
                 CreateRepository::class,
                 CreateProvider::class,
-                CreateModel::class
+                CreateModel::class,
+                MakeSmartAuthCommand::class,
             ]);
         }
     }
