@@ -55,5 +55,4 @@ class CreateUserModel extends GeneratorCommand
         $this->files->put($path, $stub);
     }
 
-
 }
