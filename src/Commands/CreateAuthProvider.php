@@ -28,7 +28,7 @@ class CreateAuthProvider extends GeneratorCommand
         parent::handle( );
     }
 
-    protected function getPath($name)
+    protected function getPath($name = 'User')
     {
         return $this->laravel['path'].'/Extensions/SmartUserProvider.php';
     }

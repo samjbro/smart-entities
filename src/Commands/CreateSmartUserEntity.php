@@ -60,7 +60,7 @@ class CreateSmartUserEntity extends GeneratorCommand
         $this->files->put($path, $stub);
     }
 
-    protected function getPath($name)
+    protected function getPath($name = 'User')
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
         return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Entity.php';
