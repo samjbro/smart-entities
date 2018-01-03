@@ -8,8 +8,19 @@ class MakeSmartAuthCommand extends Command
 {
     protected $signature = 'make:smartauth';
 
+    protected $views = [
+        'auth/login.stub' => 'auth/login.blade.php',
+        'auth/register.stub' => 'auth/register.blade.php',
+        'auth/passwords/email.stub' => 'auth/passwords/email.blade.php',
+        'auth/passwords/reset.stub' => 'auth/passwords/reset.blade.php',
+        'layouts/app.stub' => 'layouts/app.blade.php',
+        'home.stub' => 'home.blade.php',
+    ];
+
     public function handle()
     {
+        $this->createDirectories();
+        $this->exportViews();
         $this->makeModel();
         $this->makeEntity();
         $this->makeRepository();
@@ -107,5 +118,42 @@ class MakeSmartAuthCommand extends Command
             $this->laravel['path'] . "/Http/Controllers/Auth/RegisterController.php",
             file_get_contents(__DIR__ . '/stubs/registercontroller.stub')
         );
+    }
+
+    /**
+     * Create the directories for the files.
+     *
+     * @return void
+     */
+    protected function createDirectories()
+    {
+        if (! is_dir($directory = resource_path('views/layouts'))) {
+            mkdir($directory, 0755, true);
+        }
+
+        if (! is_dir($directory = resource_path('views/auth/passwords'))) {
+            mkdir($directory, 0755, true);
+        }
+    }
+
+    /**
+     * Export the authentication views.
+     *
+     * @return void
+     */
+    protected function exportViews()
+    {
+        foreach ($this->views as $key => $value) {
+            if (file_exists($view = resource_path('views/'.$value))) {
+                if (! $this->confirm("The [{$value}] view already exists. Do you want to replace it?")) {
+                    continue;
+                }
+            }
+
+            copy(
+                __DIR__.'/Stubs/make/views/'.$key,
+                $view
+            );
+        }
     }
 }
