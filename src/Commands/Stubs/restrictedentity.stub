@@ -1,0 +1,11 @@
+<?php namespace App\Exceptions;
+
+use Exception;
+
+class RestrictedEntityException extends Exception
+{
+    public static function actionNotPermitted()
+    {
+        return new static("Action not permitted. Please use a service to perform this action.");
+    }
+}

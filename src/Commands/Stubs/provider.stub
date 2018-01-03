@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Providers;
+
+use App\Contracts\DummyClassRepositoryContract;
+use App\Repositories\DummyClass\MySQL\DummyClassRepository;
+use Illuminate\Support\ServiceProvider;
+
+class DummyClassServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind(DummyClassRepositoryContract::class, DummyClassRepository::class);
+    }
+
+    public function boot()
+    {
+
+    }
+}

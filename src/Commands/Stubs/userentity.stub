@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Entities;
+
+use App\Contracts\UserRepositoryContract;
+use App\Entities\BaseEntity;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+
+class UserEntity extends BaseEntity implements AuthenticatableContract
+{
+    use Authenticatable;
+
+    protected $gettable = ['name'];
+
+    protected $primaryKey = 'id';
+
+    public function __construct(UserRepositoryContract $repo)
+    {
+        parent::__construct($repo);
+    }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
+    }
+}

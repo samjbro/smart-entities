@@ -1,0 +1,334 @@
+<?php
+
+namespace App\Entities;
+
+use App\Contracts\BaseRepositoryContract;
+use App\Exceptions\RestrictedEntityException as RestrictedEntity;
+use Exception;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Support\Collection;
+
+abstract class BaseEntity implements \JsonSerializable
+{
+    public function tempGetRepo()
+    {
+        return $this->repo;
+    }
+
+    protected $id;
+    protected $created_at;
+    protected $updated_at;
+
+    protected $subscribable;
+
+    protected $publishable;
+
+    protected $queued;
+    /**
+     * @var BaseRepositoryContract
+     */
+    protected $repo;
+    /**
+     * @var bool
+     */
+    protected $exists;
+
+    protected $gettable = [];
+
+    public function __construct(BaseRepositoryContract $repo)
+    {
+        $this->repo = $repo;
+    }
+
+    public function get($attribute)
+    {
+        if (!in_array($attribute, $this->gettable)) {
+            $entityName = get_class($this);
+            throw new Exception("Attribute or relation '{$attribute}' is not gettable or does not exist on {$entityName}.");
+        }
+
+        return $this->$attribute;
+    }
+
+    public function getPivot($value)
+    {
+        return $this->pivot[$value];
+    }
+
+    public function create(array $attributes = []): BaseEntity
+    {
+        $entityName = $this->getType();
+        foreach(array_keys($attributes) as $attribute) {
+            if (!empty($this->getGuarded()) && (in_array($attribute, $this->getGuarded()) || !in_array($attribute, $this->getFillable()))) {
+                throw new Exception("Attribute '{$attribute}' is not set as fillable on {$entityName}'s Model'");
+            }
+        }
+
+        if ($this->exists) throw RestrictedEntity::actionNotPermitted();
+        $model = $this->repo->create($attributes);
+        return $this->buildEntity($model);
+    }
+
+    protected function getFillable()
+    {
+        return $this->repo->getFillable();
+    }
+    protected function getGuarded()
+    {
+        return $this->repo->getGuarded();
+    }
+
+    public function update($id, array $attributes = [])
+    {
+        if ($this->exists) throw RestrictedEntity::actionNotPermitted();
+
+        $this->repo->update($id, $attributes);
+
+        $model = $this->repo->getById($id);
+
+        return $this->buildEntity($model);
+    }
+
+    public function delete($id)
+    {
+        if ($this->exists) throw RestrictedEntity::actionNotPermitted();
+        return $this->repo->delete($id);
+    }
+
+    public function buildEntity($model)
+    {
+        if (!$model) return null;
+        $entity = $this->newInstance();
+        $entity->setAttributes($model->toArray());
+        $entity->buildRelations($model);
+
+        return $entity;
+    }
+
+    protected function newInstance()
+    {
+        $entity = new static($this->repo);
+        $entity->exists = true;
+        return $entity;
+    }
+
+    public function buildEntities($models): Collection
+    {
+        $entities = collect();
+        foreach ($models as $model) {
+            $entities->push($this->buildEntity($model));
+        }
+        return $entities;
+    }
+
+    public function attachRelation($entity, $relation, $pivotData = [])
+    {
+        $model = $this->getModel();
+        $relationId = $entity->getId();
+        $this->repo->attachRelation($model, $relation, $relationId, $pivotData);
+    }
+
+    public function attachRelations($relation, $data)
+    {
+        $model = $this->getModel();
+        $this->repo->attachRelations($model, $relation, $data);
+
+    }
+
+    public function createRelation($relation, $data = [])
+    {
+        $model = $this->getModel();
+        $this->repo->createRelation($model, $relation, $data);
+    }
+
+    public function getModel()
+    {
+        return $this->repo->getById($this->getId());
+    }
+
+    public function getRelation($relation)
+    {
+        $model = $this->repo->getById($this->getId(), [$relation]);
+
+        if (is_a($model, Collection::class) && $model->isEmpty()) return null;
+
+        return $this->buildEntity($model)->get($relation);
+    }
+
+
+    protected function buildRelations($model)
+    {
+        if (!$model->getRelations()) return $model;
+
+        foreach ($model->getRelations() as $key => $value) {
+            if (is_a($value, Collection::class)) {
+                $relations = collect();
+                foreach($value as $relation) {
+                    $relations[] = $this->buildRelation($relation);
+                }
+                $this->$key = $relations;
+            } else {
+                $this->$key = $this->buildRelation($value);
+            }
+        }
+    }
+
+    protected function buildRelation($model)
+    {
+        if (!$model) return null;
+//        if (is_a($model, Pivot::class)) dd($model);
+        if (is_a($model, Pivot::class)) return $model->getAttributes();
+        $relationEntity = app()->make($model->getEntity());
+        return $relationEntity->buildEntity($model);
+    }
+
+    public function fresh()
+    {
+        return $this->getById($this->getId());
+    }
+
+    protected function setAttributes(array $attributes)
+    {
+        foreach ($attributes as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
+    public function getAttribute($name)
+    {
+        return $this->attributes->$name;
+    }
+
+    public function getById($id, $eagerLoads = [])
+    {
+        $model = $this->repo->getById($id, $eagerLoads);
+        return $this->buildEntity($model);
+    }
+
+    public function getFirst($eagerLoads = [])
+    {
+        $model = $this->repo->getFirst($eagerLoads);
+        return $this->buildEntity($model);
+    }
+
+    public function getLast($eagerLoads = [])
+    {
+        $model = $this->repo->getLast($eagerLoads);
+        return $this->buildEntity($model);
+    }
+
+    public function getAll($eagerLoads = [])
+    {
+        $models = $this->repo->getAll($eagerLoads);
+        return $this->buildEntities($models);
+    }
+
+    public function getFirstWhere(array $condition)
+    {
+        $model = $this->repo->getFirstWhere($condition);
+        return $model ? $this->buildEntity($model) : null;
+    }
+
+    public function getAllWhere(array $condition)
+    {
+        $models = $this->repo->getAllWhere($condition);
+        return $this->buildEntities($models);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+
+    public function getType()
+    {
+        return static::class;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param mixed $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @param mixed $updated_at
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getTableName()
+    {
+        return $this->repo->getTableName();
+    }
+
+    public function jsonSerialize()
+    {
+        // TODO: Implement jsonSerialize() method.
+    }
+
+
+
+    public function isQueueRunning()
+    {
+        return false;
+    }
+
+    public function lastPublished()
+    {
+        return null;
+    }
+
+    public function isSubscribable()
+    {
+        return $this->subscribable;
+    }
+    public function isPublishable()
+    {
+        return $this->publishable;
+    }
+
+    public function isQueued()
+    {
+        return $this->queued;
+    }
+}

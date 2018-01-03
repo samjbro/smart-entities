@@ -1,0 +1,28 @@
+{
+  "name": "samjbro/smart-entities",
+  "description": "Scaffolder for the Smart Entity Pattern",
+  "authors": [
+    {
+      "name": "Sam Broughton",
+      "email": "sjbroughton1@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php" : "^7.0",
+    "illuminate/support": "~5.5.0",
+    "illuminate/console": "~5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SamJBro\\SmartEntities\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SamJBro\\SmartEntities\\SmartEntitiesServiceProvider"
+      ]
+    }
+  }
+}

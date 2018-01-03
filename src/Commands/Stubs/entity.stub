@@ -1,0 +1,17 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Contracts\DummyClassRepositoryContract;
+use App\Entities\BaseEntity;
+
+class DummyClassEntity extends BaseEntity
+{
+    protected $gettable = [];
+
+    public function __construct(DummyClassRepositoryContract $repo)
+    {
+        parent::__construct($repo);
+    }
+
+}

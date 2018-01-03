@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models\Base\MySQL;
+
+use Illuminate\Database\Eloquent\Model;
+
+abstract class Base extends Model
+{
+    protected $entity;
+
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
+    public function getTableName()
+    {
+        return $this->table;
+    }
+
+    public function getFillable()
+    {
+        return $this->fillable;
+    }
+
+    public function getGuarded()
+    {
+        return $this->guarded;
+    }
+}

@@ -1,0 +1,15 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Models\Base\MySQL\BaseModel;
+use App\Entities\DummyClassEntity;
+
+class DummyClass extends BaseModel
+{
+    protected $table = 'dummytablename';
+
+    protected $entity = DummyClassEntity::class;
+
+    protected $fillable = [];
+}
