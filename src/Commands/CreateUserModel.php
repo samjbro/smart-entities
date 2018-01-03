@@ -28,7 +28,7 @@ class CreateUserModel extends GeneratorCommand
         parent::handle( );
     }
 
-    protected function getPath()
+    protected function getPath($name)
     {
         return $this->laravel['path'].'/Models/User/MySQL/User.php';
     }
