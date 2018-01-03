@@ -66,11 +66,6 @@ class CreateSmartUserEntity extends GeneratorCommand
         return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Entity.php';
     }
 
-    protected function getUnalteredPath($name)
-    {
-        return parent::getPath($name);
-    }
-
     protected function getStub()
     {
         return __DIR__.'/stubs/userentity.stub';

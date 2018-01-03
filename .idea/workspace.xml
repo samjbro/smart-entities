@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e97abf65-a13c-47d3-ba2f-bf8332325d1d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Commands/CreateAuthProvider.php" afterPath="$PROJECT_DIR$/src/Commands/CreateAuthProvider.php" />
       <change beforePath="$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php" afterPath="$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php" />
       <change beforePath="$PROJECT_DIR$/src/Commands/CreateUserModel.php" afterPath="$PROJECT_DIR$/src/Commands/CreateUserModel.php" />
     </list>
@@ -43,11 +42,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CreateUserModel.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Commands/CreateUserModel.php">
+          <file leaf-file-name="CreateSmartUserEntity.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+                <state relative-caret-position="637">
+                  <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -96,8 +95,8 @@
         <option value="$PROJECT_DIR$/src/SmartEntitiesServiceProvider.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateSmartEntity.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateAuthProvider.php" />
-        <option value="$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php" />
         <option value="$PROJECT_DIR$/src/Commands/CreateUserModel.php" />
+        <option value="$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php" />
       </list>
     </option>
   </component>
@@ -263,12 +262,12 @@
       <workItem from="1513011744108" duration="12164000" />
       <workItem from="1513092007487" duration="24714000" />
       <workItem from="1514906813504" duration="289000" />
-      <workItem from="1514907134553" duration="8136000" />
+      <workItem from="1514907134553" duration="8248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45303000" />
+    <option name="totallyTimeSpent" value="45415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-482" width="1920" height="1053" extended-state="0" />
@@ -537,18 +536,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php">
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateUserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="62" column="44" lean-forward="false" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+        <state relative-caret-position="435">
+          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/CreateUserModel.php">
+    <entry file="file://$PROJECT_DIR$/src/Commands/CreateSmartUserEntity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        <state relative-caret-position="637">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding />
         </state>
       </provider>
