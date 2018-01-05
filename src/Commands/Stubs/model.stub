@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use App\Models\Base\MySQL\BaseModel;
+use App\Models\Base\MySQL\Base;
 use App\Entities\DummyClassEntity;
 
-class DummyClass extends BaseModel
+class DummyClass extends Base
 {
     protected $table = 'dummytablename';
 

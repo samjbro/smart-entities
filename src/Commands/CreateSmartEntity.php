@@ -30,6 +30,10 @@ class CreateSmartEntity extends GeneratorCommand
 
     public function handle()
     {
+//        dd($this->getPath('ehi'));
+//        dd($this->getPath('rgihrigr'));
+//        dd($this->getPath($this->qualifyClass('wiehfiehgiehg')));
+//        dd($this->alreadyExists('hgirjrgirg'));
         $this->type = $this->qualifyClass($this->getNameInput());
         $this->createBaseEntity();
         $this->addEntityException();
@@ -62,7 +66,8 @@ class CreateSmartEntity extends GeneratorCommand
 
     protected function getPath($name)
     {
-        return $this->laravel['path'].'/Entities/UserEntity.php';
+        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
+        return $this->laravel['path'].'/'.str_replace('\\', '/', $name).'Entity.php';
     }
 
     protected function getUnalteredPath($name)
@@ -72,7 +77,7 @@ class CreateSmartEntity extends GeneratorCommand
 
     protected function getStub()
     {
-        return __DIR__.'/stubs/userentity.stub';
+        return __DIR__.'/stubs/entity.stub';
     }
 
 //    protected function buildClass($name)
